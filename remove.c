@@ -29,7 +29,7 @@ void remove_file(const char *file, int student_num){
     }
 
     // open temporary file for writing
-    fd_tmp = open(tmp_file, O_CREAT | O_TRUNC | O_WRONLY, 0644);
+    fd_tmp = open(tmp_file, O_CREAT | O_TRUNC | O_WRONLY, 0777);
     if(fd_tmp == -1){
 	printf("Error creating temporary file: %s\n", strerror(errno));
 	close(fd_in);

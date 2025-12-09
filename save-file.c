@@ -18,7 +18,7 @@ void write_file(student *data, int num, const char *file){
     int total_bytes = 0;
     int bytes_written = 0;
 
-    fd = open(file, O_CREAT | O_TRUNC | O_WRONLY, 0644);
+    fd = open(file, O_CREAT | O_TRUNC | O_WRONLY, 0777);
     if (fd == -1){
 	printf("File open error: %i (%s)\n", errno, strerror(errno));
 	return;

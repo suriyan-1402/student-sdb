@@ -12,13 +12,14 @@
 
 
 // this function is to add student details to end of the existing file...
+// at first, it need to enter new student details
 
 void append_file(student *data, int num, const char *file){
     int fd;
     int total_bytes = 0;
     int bytes_written = 0;
 
-    fd = open(file, O_CREAT | O_APPEND | O_RDWR, 0777);
+    fd = open(file, O_APPEND | O_RDWR, 0777);
     if(fd == -1){
 	printf("File open error: %i (%s)\n", errno, strerror(errno));
 	return;
